@@ -1,0 +1,56 @@
+{
+  "name": "modela",
+  "version": "0.0.1",
+  "description": "Modela Editor Library",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "author": "Fabrice K.E.M",
+  "private": false,
+  "scripts": {
+    "dev": "webpack --watch",
+    "build:tsc": "rimraf ./dist && tsc",
+    "build:webpack": "WEBPACK_ENV=build webpack",
+    "compile": "yarn build:tsc && yarn build:webpack",
+    "prepack": "yarn run compile",
+    "test": "Echo 'Error: No test specified' && exit 1",
+    "test:view": "yarn build:tsc && jest test/auth.test.js"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "sass": "^1.77.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/jquery": "^3.5.30",
+    "css-loader": "^7.1.1",
+    "expect.js": "^0.3.1",
+    "rimraf": "^5.0.7",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "directories": {
+    "dist": "dist/",
+    "docs": "docs/",
+    "test": "test/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fabrice8/modela"
+  },
+  "keywords": []
+}
